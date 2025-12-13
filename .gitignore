@@ -1,0 +1,69 @@
+# ============================== #
+# Xcode / Swift / SwiftUI / iOS  #
+# ============================== #
+
+# User settings
+xcuserdata/
+*.xcuserstate
+
+# Build artifacts
+DerivedData/
+build/
+
+# Xcode
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.hmap
+
+# macOS
+.DS_Store
+
+# App packaging
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+.build/
+Packages/
+.swiftpm/xcode/
+# Package.resolved
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Checkouts
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Xcode project files
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/**
+
+# Workspace
+*.xcworkspace/xcuserdata
+!*.xcworkspace/contents.xcworkspacedata
+
+# Coverage
+*.gcno
+*.gcda
+*.xccovreport
+*.xccovarchive
+
+# SwiftUI previews cache
+**/Previews/

@@ -6,13 +6,47 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CC407CB52EF47A6200614F4B /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = CC407CB42EF47A6200614F4B /* RswiftLibrary */; };
+		CC407CEE2EF4BB5500614F4B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CC407CED2EF4BB5500614F4B /* Alamofire */; };
+		CC407CF52EF570BE00614F4B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC407CF42EF570BE00614F4B /* RealmSwift */; };
+		CC407CFA2EF570F000614F4B /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CC407CF42EF570BE00614F4B /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CC407CFB2EF570F000614F4B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CC407CFA2EF570F000614F4B /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CC4C65062EEDF22700E2D6E3 /* Feeder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feeder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CC407CC42EF49F5200614F4B /* Exceptions for "Feeder" folder in "Feeder" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = CC4C65052EEDF22700E2D6E3 /* Feeder */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CC4C65082EEDF22700E2D6E3 /* Feeder */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CC407CC42EF49F5200614F4B /* Exceptions for "Feeder" folder in "Feeder" target */,
+			);
 			path = Feeder;
 			sourceTree = "<group>";
 		};
@@ -23,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC407CF52EF570BE00614F4B /* RealmSwift in Frameworks */,
+				CC407CB52EF47A6200614F4B /* RswiftLibrary in Frameworks */,
+				CC407CEE2EF4BB5500614F4B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,16 +92,21 @@
 				CC4C65022EEDF22700E2D6E3 /* Sources */,
 				CC4C65032EEDF22700E2D6E3 /* Frameworks */,
 				CC4C65042EEDF22700E2D6E3 /* Resources */,
+				CC407CFB2EF570F000614F4B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CC407CB72EF47A8000614F4B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				CC4C65082EEDF22700E2D6E3 /* Feeder */,
 			);
 			name = Feeder;
 			packageProductDependencies = (
+				CC407CB42EF47A6200614F4B /* RswiftLibrary */,
+				CC407CED2EF4BB5500614F4B /* Alamofire */,
+				CC407CF42EF570BE00614F4B /* RealmSwift */,
 			);
 			productName = Feeder;
 			productReference = CC4C65062EEDF22700E2D6E3 /* Feeder.app */;
@@ -94,6 +136,11 @@
 			);
 			mainGroup = CC4C64FD2EEDF22700E2D6E3;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CC407CB32EF47A6200614F4B /* XCRemoteSwiftPackageReference "R.swift" */,
+				CC407CEC2EF4BB5500614F4B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CC407CF32EF570BE00614F4B /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CC4C65072EEDF22700E2D6E3 /* Products */;
 			projectDirPath = "";
@@ -123,6 +170,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC407CB72EF47A8000614F4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = CC407CB62EF47A8000614F4B /* RswiftGenerateInternalResources */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CC4C650F2EEDF22F00E2D6E3 /* Debug */ = {
@@ -178,6 +232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -236,6 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -256,6 +312,7 @@
 				DEVELOPMENT_TEAM = DS3A5R6B5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Feeder/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -289,6 +346,7 @@
 				DEVELOPMENT_TEAM = DS3A5R6B5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Feeder/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -334,6 +392,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC407CB32EF47A6200614F4B /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.8.0;
+			};
+		};
+		CC407CEC2EF4BB5500614F4B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		CC407CF32EF570BE00614F4B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.54.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC407CB42EF47A6200614F4B /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC407CB32EF47A6200614F4B /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
+		};
+		CC407CB62EF47A8000614F4B /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC407CB32EF47A6200614F4B /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		CC407CED2EF4BB5500614F4B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC407CEC2EF4BB5500614F4B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		CC407CF42EF570BE00614F4B /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC407CF32EF570BE00614F4B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC4C64FE2EEDF22700E2D6E3 /* Project object */;
 }

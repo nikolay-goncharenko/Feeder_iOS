@@ -11,7 +11,7 @@ import SwiftUI
 struct FeederApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView().ignoresSafeArea()
         }
     }
 }

@@ -12,7 +12,6 @@ protocol BaseStore: ObservableObject {
     associatedtype Intent
     
     var state: State { get }
-    var intentListener: ((Intent) -> Void)? { get set }
     
     func send(_ intent: Intent)
 }

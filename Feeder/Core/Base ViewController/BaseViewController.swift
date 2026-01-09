@@ -10,20 +10,31 @@ import SwiftUI
 final class BaseViewController: UIHostingController<AnyView> {
     
     enum StatusBarStyle {
-        case byDefault
+        case `default`
         case light
         case dark
     }
     
-    var statusbarStyle: StatusBarStyle = .byDefault {
+    enum BackgroundStyle {
+        case `default`
+        case clear
+    }
+    
+    var statusbarStyle: StatusBarStyle = .default {
         didSet {
             setNeedsStatusBarAppearanceUpdate()
         }
     }
     
+    var backgroundStyle: BackgroundStyle = .default {
+        didSet {
+            updateBackgroundStyle()
+        }
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         switch statusbarStyle {
-        case .byDefault: .default
+        case .default: .default
         case .light: .lightContent
         case .dark: .darkContent
         }
@@ -31,5 +42,14 @@ final class BaseViewController: UIHostingController<AnyView> {
     
     convenience init<V: View>(rootView: V) {
         self.init(rootView: AnyView(rootView))
+    }
+    
+    private func updateBackgroundStyle() {
+        switch backgroundStyle {
+        case .default:
+            view.backgroundColor = nil
+        case .clear:
+            view.backgroundColor = .clear
+        }
     }
 }

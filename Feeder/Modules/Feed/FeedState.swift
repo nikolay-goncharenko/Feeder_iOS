@@ -7,5 +7,6 @@
 
 struct FeedState {
     var isLoading: Bool = false
-    var feedList: [String] = []
+    var feedList: [FeedListDTO] = []
+    var feedNotFound: String?
 }

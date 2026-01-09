@@ -18,7 +18,9 @@ struct FeedModule: BaseModule {
         )
         let view = FeedView(store: store)
         let viewController = BaseViewController(rootView: view)
+        
         viewController.statusbarStyle = .light
+        viewController.backgroundStyle = .clear
         
         self.store = store
         self.viewController = viewController

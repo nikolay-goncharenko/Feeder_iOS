@@ -9,13 +9,16 @@ import SwiftUI
 
 struct RootView: UIViewControllerRepresentable {
     
+    func makeCoordinator() -> Holder {
+        Holder()
+    }
+    
     func makeUIViewController(context: Context) -> UINavigationController {
-        let navigationController = UINavigationController()
-        navigationController.isNavigationBarHidden = true
-        
-        let router = Router(navigationController: navigationController)
+        let navigationController = SwipeNavigationController()
+        let router = RouterImpl(navigationController: navigationController)
         let coordinator = AppCoordinator(router: router)
         
+        context.coordinator.appCoordinator = coordinator
         coordinator.start()
         
         return navigationController
@@ -25,4 +28,9 @@ struct RootView: UIViewControllerRepresentable {
         _ uiViewController: UINavigationController,
         context: Context
     ) {}
+    
+    // STRONG HOLDER
+    final class Holder {
+        var appCoordinator: AppCoordinator?
+    }
 }

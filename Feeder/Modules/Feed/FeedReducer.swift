@@ -7,12 +7,28 @@
 
 struct FeedReducer: BaseReducer {
     
-    func reduce(
-        state: inout FeedState,
-        intent: FeedIntent
-    ) {
+    func reduce(state: inout FeedState, intent: FeedIntent) {
+        
         switch intent {
-            default : break
+        case .feedIsLoading:
+            guard !state.isLoading else { return }
+            state.isLoading = true
+            state.feedNotFound = nil
+            
+        case .feedObserved(let list):
+            state.feedList = list
+            state.isLoading = false
+            
+        case .feedLoadingFailed(let error):
+            state.feedNotFound = error.errorDescription
+            
+        case .sortByDate:
+            state.feedList.sort { $0.timestamp > $1.timestamp }
+            
+        case .sortByRating:
+            state.feedList.sort { $0.likesCount > $1.likesCount }
+            
+        default: break
         }
     }
 }

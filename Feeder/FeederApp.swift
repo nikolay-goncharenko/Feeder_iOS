@@ -6,12 +6,22 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseDatabaseInternal
 
 @main
 struct FeederApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+    }
+    
     var body: some Scene {
         WindowGroup {
-            RootView().ignoresSafeArea()
+            RootView()
+                .ignoresSafeArea()
+                .background(.coreBlack)
         }
     }
 }

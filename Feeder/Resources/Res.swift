@@ -5,8 +5,11 @@
 //  Created by Nick Goncharenko on 18.12.2025.
 //
 
+// MARK: - Global imports
+@_exported import RswiftResources
+
+// MARK: - Local imports
 import SwiftUI
-import RswiftResources
 
 enum Res {
     

@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CC407CB52EF47A6200614F4B /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = CC407CB42EF47A6200614F4B /* RswiftLibrary */; };
-		CC407CEE2EF4BB5500614F4B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CC407CED2EF4BB5500614F4B /* Alamofire */; };
-		CC407CF52EF570BE00614F4B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC407CF42EF570BE00614F4B /* RealmSwift */; };
-		CC407CFA2EF570F000614F4B /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CC407CF42EF570BE00614F4B /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CC4080072EFF55FE00614F4B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CC4080062EFF55FE00614F4B /* FirebaseDatabase */; };
+		CC40800C2EFF575300614F4B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CC40800B2EFF575300614F4B /* FirebaseCore */; };
+		CC40820F2F0B13EF00614F4B /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CC40820E2F0B13EF00614F4B /* Nuke */; };
+		CC4082112F0B13EF00614F4B /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = CC4082102F0B13EF00614F4B /* NukeUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,7 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CC407CFA2EF570F000614F4B /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,9 +57,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC407CF52EF570BE00614F4B /* RealmSwift in Frameworks */,
+				CC40800C2EFF575300614F4B /* FirebaseCore in Frameworks */,
 				CC407CB52EF47A6200614F4B /* RswiftLibrary in Frameworks */,
-				CC407CEE2EF4BB5500614F4B /* Alamofire in Frameworks */,
+				CC4082112F0B13EF00614F4B /* NukeUI in Frameworks */,
+				CC4080072EFF55FE00614F4B /* FirebaseDatabase in Frameworks */,
+				CC40820F2F0B13EF00614F4B /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +107,10 @@
 			name = Feeder;
 			packageProductDependencies = (
 				CC407CB42EF47A6200614F4B /* RswiftLibrary */,
-				CC407CED2EF4BB5500614F4B /* Alamofire */,
-				CC407CF42EF570BE00614F4B /* RealmSwift */,
+				CC4080062EFF55FE00614F4B /* FirebaseDatabase */,
+				CC40800B2EFF575300614F4B /* FirebaseCore */,
+				CC40820E2F0B13EF00614F4B /* Nuke */,
+				CC4082102F0B13EF00614F4B /* NukeUI */,
 			);
 			productName = Feeder;
 			productReference = CC4C65062EEDF22700E2D6E3 /* Feeder.app */;
@@ -138,8 +142,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				CC407CB32EF47A6200614F4B /* XCRemoteSwiftPackageReference "R.swift" */,
-				CC407CEC2EF4BB5500614F4B /* XCRemoteSwiftPackageReference "Alamofire" */,
-				CC407CF32EF570BE00614F4B /* XCRemoteSwiftPackageReference "realm-swift" */,
+				CC4080052EFF55FE00614F4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CC40820D2F0B13EF00614F4B /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CC4C65072EEDF22700E2D6E3 /* Products */;
@@ -402,20 +406,20 @@
 				minimumVersion = 7.8.0;
 			};
 		};
-		CC407CEC2EF4BB5500614F4B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		CC4080052EFF55FE00614F4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.10.2;
+				minimumVersion = 12.7.0;
 			};
 		};
-		CC407CF32EF570BE00614F4B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		CC40820D2F0B13EF00614F4B /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
+			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.54.6;
+				minimumVersion = 12.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -431,15 +435,25 @@
 			package = CC407CB32EF47A6200614F4B /* XCRemoteSwiftPackageReference "R.swift" */;
 			productName = "plugin:RswiftGenerateInternalResources";
 		};
-		CC407CED2EF4BB5500614F4B /* Alamofire */ = {
+		CC4080062EFF55FE00614F4B /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CC407CEC2EF4BB5500614F4B /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = CC4080052EFF55FE00614F4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
-		CC407CF42EF570BE00614F4B /* RealmSwift */ = {
+		CC40800B2EFF575300614F4B /* FirebaseCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CC407CF32EF570BE00614F4B /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
+			package = CC4080052EFF55FE00614F4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		CC40820E2F0B13EF00614F4B /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC40820D2F0B13EF00614F4B /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		CC4082102F0B13EF00614F4B /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC40820D2F0B13EF00614F4B /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

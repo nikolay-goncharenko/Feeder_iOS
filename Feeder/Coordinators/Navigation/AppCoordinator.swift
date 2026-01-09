@@ -8,25 +8,23 @@
 final class AppCoordinator: BaseCoordinator {
     
     var childCoordinators: [BaseCoordinator] = []
+    let router: Router
     
-    private let router: RouterProtocol
-    
-    init(router: RouterProtocol) {
+    init(router: Router) {
         self.router = router
     }
     
     func start() {
-        let module = FeedModule()
-        module.store.intentListener = { [weak self] intent in
-            self?.hanble(intent)
-        }
-        router.openAsRoot(module: module, animated: false)
+        openFeedFlow()
     }
     
-    private func hanble(_ intent: FeedIntent) {
-        switch intent {
-        case .initializer:
-            print("Initializer")
+    private func openFeedFlow() {
+        let coordinator = startChild(
+            FeedCoordinator(router: router)
+        )
+        
+        coordinator.onFinish = { [weak self, weak coordinator] in
+            self?.remove(coordinator)
         }
     }
 }
